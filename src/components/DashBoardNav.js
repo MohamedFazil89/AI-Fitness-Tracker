@@ -43,7 +43,7 @@ function DashboardNav(props) {
           </span>
           Chat
         </li>
-        <li style={{ color: props.Pcolor }} onClick={() => navigate("/Plans")}>
+        <li style={{ color: props.Pcolor }} onClick={() => navigate("/Plan")}>
           <span style={{ marginRight: 10 }}>
             <FontAwesomeIcon icon={faList} />
           </span>
