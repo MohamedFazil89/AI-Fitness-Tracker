@@ -4,11 +4,13 @@ import SettingNav from './SettingNav';
 import GoalSet from "./assets/Group 5.png";
 import questions from './QuestionList';
 import "./Styles/Questions.css";
+import { useNavigate } from 'react-router-dom';
 
 function Dashboard() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [responses, setResponses] = useState({});
   const [selectedOptionIndex, setSelectedOptionIndex] = useState(null);
+  const navigate = useNavigate();
 
   const handleOptionClick = (option, index) => {
     setResponses({
@@ -19,11 +21,20 @@ function Dashboard() {
   };
 
   const handleNextClick = () => {
+    // Check if an option has been selected
+    if (selectedOptionIndex === null) {
+      alert('Please select an option before proceeding.');
+      return;
+    }
+
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
       setSelectedOptionIndex(null); 
     } else {
       console.log("All responses:", responses);
+      navigate("/Plans");
+      
+      // You might want to handle the submission or display a summary here
     }
   };
 
@@ -53,7 +64,7 @@ function Dashboard() {
             ))}
           </ul>
           <button onClick={handleNextClick} className='Next-Button'>
-            {currentQuestionIndex + 1 === questions.length ? "Submit" : "Next"}
+            {currentQuestionIndex + 1 === questions.length ? "Get My Plan" : "Next"}
           </button>
         </section>
       </div>
