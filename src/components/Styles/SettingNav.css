@@ -10,10 +10,12 @@
     box-shadow: 0 0 10px black;
     top: 0;
     
+    
 }
 .Nav-Setting-container > li{
     list-style-type: none;
     margin: 1.4rem 0;
+    cursor: pointer;
 }
 
 .Avatar{

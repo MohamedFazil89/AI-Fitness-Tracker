@@ -16,7 +16,7 @@ export default function SettingNav() {
               <img src={Abs} alt='Abs' className='Avatar' />
             </li>
             <li><FontAwesomeIcon icon={faBell} size='lg' className='icons' /></li>
-            <li><FontAwesomeIcon icon={faXbox}  size='lg' className='icons'/></li>
+            <li style={{ color: "blue"}}><FontAwesomeIcon icon={faXbox}  size='lg' className='icons'/></li>
             <li><FontAwesomeIcon icon={faGear} size='lg' className='icons'/></li>
       
     </div>
