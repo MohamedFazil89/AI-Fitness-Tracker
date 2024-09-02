@@ -1,0 +1,17 @@
+.Nav-Setting-container{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 20px;
+    margin: .5rem;
+    background-color: #FFF3E9;
+    padding: 1rem;
+    border-radius: 5rem;
+    box-shadow: 0 0 10px black;
+    top: 0;
+    
+}
+.Nav-Setting-container > li{
+    list-style-type: none;
+    margin: 1.4rem 0;
+}
