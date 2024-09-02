@@ -3,17 +3,17 @@ import DashboardNav from '../components/DashBoardNav';
 import SettingNav from '../components/SettingNav';
 import exercisePlans from "../components/ExeriscsList";
 import "../components/Styles/Plans.css";
-
+import Goalset from '../components/Goalset';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 
-
 function Plans() {
   const [selectedDay, setSelectedDay] = useState(null);
-  const [selectedLevel, setSelectedLevel] = useState('beginner'); // Set default level
+  const [selectedLevel, setSelectedLevel] = useState('beginner');
+
 
   const handleDayClick = (day) => {
-    setSelectedDay(day);
+    setSelectedDay(selectedDay === day ? null : day); // Toggle dropdown
   };
 
   const getExerciseDetails = () => {
@@ -21,32 +21,39 @@ function Plans() {
       const dayExercises = exercisePlans.find(plan => plan[selectedLevel])[selectedLevel][selectedDay];
       return Array.isArray(dayExercises) ? dayExercises : [dayExercises];
     }
-    return null;
+    return [];
   };
 
   return (
     <div className="dashboard-container">
       <DashboardNav Dcolor={"orange"} />
       <div className="Report-container">
+        <Goalset />
         <p className='MyPlan-text'>My Plans</p>
         <nav className='Day-List'>
           {Object.keys(exercisePlans[0][selectedLevel]).map(day => (
-            <li key={day} onClick={() => handleDayClick(day)}>
+            <li 
+              key={day} 
+              className={`Day-Item ${selectedDay === day ? 'active' : ''}`} 
+              style={{ backgroundColor: selectedDay === day ? "orange" : "white" }}
+              onClick={() => handleDayClick(day)}
+            >
               {day}
+              {selectedDay === day && (
+                <div className='Exercise-Details'>
+                  <span className='Close-Icon' onClick={() => setSelectedDay(null)}>
+                    <FontAwesomeIcon icon={faX} />
+                  </span>
+                  <ul>
+                    {getExerciseDetails().map((exercise, index) => (
+                      <li key={index} className='List-Exercise'>{exercise}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </li>
           ))}
         </nav>
-        {selectedDay && (
-          <div className='Exercise-Details'>
-            <h3>{selectedDay} </h3>
-            <span onClick={() => setSelectedDay(null)}><FontAwesomeIcon icon={faX} /></span>
-            <ul>
-              {getExerciseDetails().map((exercise, index) => (
-                <li key={index} className='List-Exercise'>{exercise}</li>
-              ))}
-            </ul>
-          </div>
-        )}
       </div>
       <SettingNav />
     </div>

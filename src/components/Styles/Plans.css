@@ -33,9 +33,9 @@
     cursor: pointer;
 }
 
-.Day-List li:hover{
+/* .Day-List li:hover{
     background-color: rgb(180, 180, 180);
-}
+} */
 
 /* Plans.css */
 .Report-container {
@@ -56,9 +56,10 @@
 
 .Day-List {
     margin: 1rem;
+
 }
 
-.Day-List li {
+.Day-List li{
     list-style-type: none;
     margin-top: 1rem;
     font-size: 1.5rem;
@@ -67,50 +68,39 @@
     padding: 1rem;
     border-radius: 1rem;
     cursor: pointer;
+
+    
 }
 
-.Day-List li:hover {
+/* .Day-List li:hover {
     background-color: rgb(180, 180, 180);
-}
+} */
 
 .Exercise-Details {
-    position: absolute;
-    background-color: rgba(255, 255,255, .5);
-    padding: 1.5rem;
-    border-radius: .5rem;
-    filter: drop-shadow(0 0 5px black);
-    top: 5rem;
-    right:27rem;
+    /* filter: drop-shadow(0 0 5px black); */
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
 
 }
 
-.Exercise-Details h3 {
-    font-size: 2rem;
-    color: orange;
-    text-shadow: 1px 1px 1px black;
-}
+
 
 
 .Exercise-Details p {
     font-size: 1.5rem;
     color: black;
+
 }
-.Exercise-Details span{
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    cursor: pointer;
-}
-.List-Exercise{
+.List-Exercise {
     list-style-type: none;
     font-size: 1.5rem;
     margin-top: 1rem;
     background-color: rgb(247, 212, 146);
-    padding: 1rem 3rem;
+    padding: 1rem;
     border-radius: 1rem;
-
+    text-align: left;
+    width: calc(100% - 2rem); /* Adjusting width to fill the container */
+    max-width: 58rem; /* Constraining max width for better layout */
 }
