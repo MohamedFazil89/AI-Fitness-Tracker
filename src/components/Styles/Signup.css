@@ -10,6 +10,10 @@
     justify-content: center;
     height: 100vh;
     background-color: rgb(222, 222, 222);
+    color: white;
+    background-image: url("../assets/bg.jpg");
+    background-position: center;
+    background-size: cover;
 
 }
 .signup-form{
@@ -23,6 +27,7 @@
     font-size: 2rem;
     position: relative;
     bottom: 5rem;
+    font-size: 3rem;
 }
 
 .signup-input{
@@ -33,6 +38,8 @@
     border: none;
     border-bottom: 2px solid black;
     background-color: transparent;
+    color: white;
+    font-size: 1.5rem;
 }
 
 
@@ -42,6 +49,10 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
+    color: white;
+    font-size: 1.5rem;
+
+
 
 }
 .signup-button{
@@ -54,11 +65,11 @@
 }
 
 .signup-button:active{
-    background-color: green;
+    background-color: blue;
 }
 .signup-input:focus{
     outline: none;
-    border-bottom: 2px solid green;
+    border-bottom: 2px solid white;
 }
 .navigate-login{
     text-decoration: underline;
