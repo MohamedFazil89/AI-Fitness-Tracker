@@ -1,25 +1,14 @@
 .Report-container{
     background-color: #FFF3E9;
-    width: 67rem;
+    /* width: 67rem; */
+    max-width: 100%;
     margin: 1rem;
     filter: drop-shadow(0 0 10px black);
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    padding: 1rem;
 }
-/* 
-.Blur{
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,.5);
-    filter: blur(100px);
-
-} */
 
 .SetGoal{
     cursor: pointer;
@@ -30,10 +19,7 @@
 .SetGoal:hover{
     filter: drop-shadow(0 0 10px black);
     transform: scale(1.01);
-
 }
-
-
 
 .Greet-text{
     font-size: 3rem;
@@ -61,15 +47,97 @@
 .Graph-container{
     display: flex;
     justify-content:space-between;
+    /* flex-wrap: wrap; */
+    width: fit-content;
 }
 
 .Graph-container > img{
     margin: 5rem;
     cursor: pointer;
     transition: .5s;
+    max-width: 100%;
 }
 .Graph-container > img:hover{
     transform: scale(1.1);
     filter: drop-shadow(0 0 10px black);
+}
 
+.Reload{
+    cursor: pointer;
+}
+
+/* Responsive Styling */
+@media only screen and (max-width: 1200px) {
+    .Report-container {
+        width: 90%;
+    }
+
+    .Greet-text {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .Quote-text {
+        margin-left: 2rem;
+        font-size: 1.75rem;
+    }
+
+    .Facts-text {
+        font-size: 1.25rem;
+    }
+
+    .Graph-container {
+        justify-content: center;
+    }
+
+    .Graph-container > img {
+        margin: 2rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .Greet-text {
+        font-size: 2rem;
+    }
+
+    .Quote-text {
+        margin-left: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .Facts-text {
+        width: 90%;
+        font-size: 1.2rem;
+    }
+
+    .Graph-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Graph-container > img {
+        margin: 2rem 0;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .Greet-text {
+        font-size: 1.5rem;
+    }
+
+    .Quote-text {
+        margin-left: 0;
+        font-size: 1.25rem;
+        text-align: center;
+    }
+
+    .Facts-text {
+        width: 95%;
+        font-size: 1rem;
+    }
+
+    .Graph-container > img {
+        width: 100%;
+        margin: 1rem 0;
+    }
 }
